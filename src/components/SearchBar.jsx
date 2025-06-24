@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ REQUIRED: this prevents ReferenceError
+  const [term, setTerm] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
-    setSearchTerm(value);
+    setTerm(value);
     if (onSearch) {
       onSearch(value);
     }
@@ -17,7 +17,7 @@ const SearchBar = ({ onSearch }) => {
       type="text"
       placeholder="Search..."
       className="w-full p-2 rounded border"
-      value={searchTerm}
+      value={term}
       onChange={handleChange}
     />
   );
