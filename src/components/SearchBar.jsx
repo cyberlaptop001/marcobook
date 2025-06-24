@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ FIXED LINE
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ REQUIRED: this prevents ReferenceError
 
   const handleChange = (e) => {
     const value = e.target.value;
