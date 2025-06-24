@@ -1,22 +1,25 @@
-// ✅ File: src/components/SearchBar.jsx
+// ✅ src/components/SearchBar.jsx
 
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ define it
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ this line is critical
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    onSearch(e.target.value);
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    if (onSearch) {
+      onSearch(value); // optional callback if passed
+    }
   };
 
   return (
     <input
       type="text"
       placeholder="Search..."
+      className="w-full p-2 rounded border"
       value={searchTerm}
-      onChange={handleSearch}
-      className="border px-4 py-2 rounded w-full mb-4"
+      onChange={handleChange}
     />
   );
 };
