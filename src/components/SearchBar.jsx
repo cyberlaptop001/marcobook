@@ -1,8 +1,8 @@
-// ✅ src/components/SearchBar.jsx
+// ✅ File: src/components/SearchBar.jsx
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ declare state
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ FIXED LINE
 
   const handleChange = (e) => {
     const value = e.target.value;
