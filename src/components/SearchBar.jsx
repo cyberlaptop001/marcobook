@@ -1,24 +1,15 @@
-// ✅ File: src/components/SearchBar.jsx
 import React, { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
-  const [term, setTerm] = useState("");
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setTerm(value);
-    if (onSearch) {
-      onSearch(value);
-    }
-  };
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <input
       type="text"
       placeholder="Search..."
-      className="w-full p-2 rounded border"
-      value={term}
-      onChange={handleChange}
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      className="p-2 border rounded w-full"
     />
   );
 };
