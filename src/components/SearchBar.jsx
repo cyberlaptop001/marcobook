@@ -1,15 +1,14 @@
 // ✅ src/components/SearchBar.jsx
-
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ this line is critical
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ declare state
 
   const handleChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
     if (onSearch) {
-      onSearch(value); // optional callback if passed
+      onSearch(value);
     }
   };
 
