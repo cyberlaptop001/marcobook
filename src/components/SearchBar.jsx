@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ THIS LINE FIXES THE ERROR
 
   const handleChange = (e) => {
     const value = e.target.value;
